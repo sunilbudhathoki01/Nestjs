@@ -14,6 +14,10 @@ export class User {
 
   @Column({ nullable: true })
   age!: number;
+
+  @Column()
+  password!: string;
+
   @OneToMany(() => Post, (post) => post.user, { onDelete: 'CASCADE' })
   post!: Post;
 }
